@@ -50,10 +50,10 @@ products:
         what: "29-page printable coloring book for developers — algorithms, circuits, error pages reimagined" }
     - { id: "tsypz", name: "Bluepill Fiction Starter Library", price: "$6.99",
         url: "https://bpmiller02.gumroad.com/l/tsypz",
-        what: "Both Bluepill Fiction opening chapters + worldbuilding notes (Orison + Blackwood Pack)" }
+        what: "Bluepill Fiction starter library — opening chapter + worldbuilding notes for the dystopian Orison universe" }
     - { id: "sxvomi", name: "Bluepill Fiction Sampler", price: "free (PWYW)",
         url: "https://bpmiller02.gumroad.com/l/sxvomi",
-        what: "Free sampler: Eternal Bonds opening draft + Algorithm of Dust story tracker" }
+        what: "Free sampler for The Algorithm of Dust — opening excerpt + printable story tracker" }
     - { id: "retdie", name: "The Algorithm of Dust", price: "$4.99",
         url: "https://bpmiller02.gumroad.com/l/retdie",
         what: "Short dystopian novel — the city of Orison, the Algorithm, art as resistance" }
