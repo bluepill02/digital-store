@@ -37,26 +37,26 @@ products:
         what: "Notion intake form, welcome emails, kickoff agenda, revision policy, contract checklist, comms SOP" }
     - { id: "evkov", name: "Freelancer Admin Starter Kit", price: "free (PWYW)",
         url: "https://bpmiller02.gumroad.com/l/evkov",
-        what: "Free starter kit: invoice template, expense tracker, basic project board" }
+        what: "Free starter kit: 5 core templates — intake form, invoice tracker, email scripts, rate calculator, kickoff checklist" }
     - { id: "zgroz", name: "B2B Newsletter Welcome Sequence", price: "$19",
         url: "https://bpmiller02.gumroad.com/l/zgroz",
-        what: "5-email welcome sequence for B2B newsletters (day 0/2/4/7/14)" }
+        what: "5 prompt templates for a B2B newsletter welcome sequence (day 0/2/4/7/10), anti-AI-tone rules" }
   bp_creative:
-    - { id: "jksnhb", name: "Quiet Power Coloring Book", price: "$3.99",
+    - { id: "jksnhb", name: "Quiet Power Coloring & Self-Care Kit", price: "$3.99",
         url: "https://bpmiller02.gumroad.com/l/jksnhb",
-        what: "Coloring book for mindful rest — mandalas, affirmations, permission slips" }
-    - { id: "hsrvez", name: "Debug Your Mind", price: "$2.99",
+        what: "Anxiety relief kit: 50+ coloring pages with affirmations, mindfulness routine, affirmation cards" }
+    - { id: "hsrvez", name: "Debug Your Mind (Coloring Book)", price: "$2.99",
         url: "https://bpmiller02.gumroad.com/l/hsrvez",
-        what: "Coloring book for developers — error pages, terminal art, bug-themed designs" }
+        what: "29-page printable coloring book for developers — algorithms, circuits, error pages reimagined" }
     - { id: "tsypz", name: "Bluepill Fiction Starter Library", price: "$6.99",
         url: "https://bpmiller02.gumroad.com/l/tsypz",
-        what: "First chapters + worldbuilding notes for the Bluepill Fiction universe" }
+        what: "Both Bluepill Fiction opening chapters + worldbuilding notes (Orison + Blackwood Pack)" }
     - { id: "sxvomi", name: "Bluepill Fiction Sampler", price: "free (PWYW)",
         url: "https://bpmiller02.gumroad.com/l/sxvomi",
-        what: "Free sampler of the Bluepill Fiction universe — first chapters across titles" }
-    - { id: "retdie", name: "Algorithm of Dust", price: "$4.99",
+        what: "Free sampler: Eternal Bonds opening draft + Algorithm of Dust story tracker" }
+    - { id: "retdie", name: "The Algorithm of Dust", price: "$4.99",
         url: "https://bpmiller02.gumroad.com/l/retdie",
-        what: "Short dystopian novel — a city that runs on a single algorithm" }
+        what: "Short dystopian novel — the city of Orison, the Algorithm, art as resistance" }
 
 # Storefront profile URL — for launch posts that don't spotlight a single product
 storefront_url: "https://bpmiller02.gumroad.com/"
