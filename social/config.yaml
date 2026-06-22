@@ -1,0 +1,166 @@
+# bpmiller02 Content Engine Config
+# Drives the marketing-content-engine skill. Read by both the ollama client
+# (system prompt) and the draft validator (banlist + brand checks).
+
+brand:
+  name: "bpmiller02"
+  owner: "B.P. Miller"
+  voice_summary: >
+    Builder, not influencer. Talks like a friend who's actually shipped the thing,
+    not a SaaS landing page. Two sub-brands under one account: bluepill02 (operator/
+    technical) and BP Creative (lifestyle/artisan). Posts weave between them but
+    always feel like the same person.
+  tone_pillars:
+    - "Direct. Numbers before adjectives."
+    - "Mechanism before outcome. Show the how, not just the result."
+    - "Quiet pride. Let the work speak."
+    - "Honest about what's hard. No fake wins."
+  voice_anti_patterns:
+    - "Don't be chirpy or use emojis as filler"
+    - "Don't open with a question ('Ever felt like...?')"
+    - "Don't use 'excited to announce' / 'thrilled to share' / 'humbled'"
+    - "Don't stack 3+ hashtags at the end"
+    - "Don't fake-humble by listing credentials"
+
+products:
+  # 9 total: split between two sub-brands
+  # Each entry: name, url, price, sub_brand, what_it_is (for prompt context)
+  bluepill02:
+    - { id: "aokhqy", name: "Freelancer OS", price: "$35",
+        url: "https://bpmiller02.gumroad.com/l/aokhqy",
+        what: "Complete Notion system replacing $100+/mo in SaaS (CRM, projects, revenue)" }
+    - { id: "fjanoj", name: "Freelancer Business Command Bundle", price: "$49",
+        url: "https://bpmiller02.gumroad.com/l/fjanoj",
+        what: "Bundle: Freelancer OS + Client Onboarding Pack. $63 value for $49, saves $14" }
+    - { id: "pptglg", name: "Client Onboarding Pack", price: "$14",
+        url: "https://bpmiller02.gumroad.com/l/pptglg",
+        what: "Notion intake form, welcome emails, kickoff agenda, revision policy, contract checklist, comms SOP" }
+    - { id: "evkov", name: "Freelancer Admin Starter Kit", price: "free (PWYW)",
+        url: "https://bpmiller02.gumroad.com/l/evkov",
+        what: "Free starter kit: invoice template, expense tracker, basic project board" }
+    - { id: "zgroz", name: "B2B Newsletter Welcome Sequence", price: "$19",
+        url: "https://bpmiller02.gumroad.com/l/zgroz",
+        what: "5-email welcome sequence for B2B newsletters (day 0/2/4/7/14)" }
+  bp_creative:
+    - { id: "jksnhb", name: "Quiet Power Coloring Book", price: "$3.99",
+        url: "https://bpmiller02.gumroad.com/l/jksnhb",
+        what: "Coloring book for mindful rest — mandalas, affirmations, permission slips" }
+    - { id: "hsrvez", name: "Debug Your Mind", price: "$2.99",
+        url: "https://bpmiller02.gumroad.com/l/hsrvez",
+        what: "Coloring book for developers — error pages, terminal art, bug-themed designs" }
+    - { id: "tsypz", name: "Bluepill Fiction Starter Library", price: "$6.99",
+        url: "https://bpmiller02.gumroad.com/l/tsypz",
+        what: "First chapters + worldbuilding notes for the Bluepill Fiction universe" }
+    - { id: "sxvomi", name: "Bluepill Fiction Sampler", price: "free (PWYW)",
+        url: "https://bpmiller02.gumroad.com/l/sxvomi",
+        what: "Free sampler of the Bluepill Fiction universe — first chapters across titles" }
+    - { id: "retdie", name: "Algorithm of Dust", price: "$4.99",
+        url: "https://bpmiller02.gumroad.com/l/retdie",
+        what: "Short dystopian novel — a city that runs on a single algorithm" }
+
+# Storefront profile URL — for launch posts that don't spotlight a single product
+storefront_url: "https://bpmiller02.gumroad.com/"
+
+platforms:
+  x:
+    handle: "@bpmiller02"
+    profile_url: "https://x.com/bpmiller02"
+    char_limit: 280
+    voice_modifier: "Terse. Punchy. One main idea per post. No threads unless absolutely necessary."
+    hashtag_policy: "0–1 hashtags max, only if highly relevant"
+    best_for: ["build-in-public", "quick lessons", "single-product spotlight"]
+  mastodon:
+    handle: "@bpmiller02@mastodon.social"
+    profile_url: "https://mastodon.social/@bpmiller02"
+    char_limit: 500
+    voice_modifier: "Slightly more nerdy. Technical specifics welcome. Tag relevant instances/hashtags if natural."
+    hashtag_policy: "1–2 hashtags, can be #indieweb #buildinpublic style"
+    best_for: ["technical deep-dive", "tool recommendations", "small wins"]
+  bluesky:
+    handle: "@b-pmiller.bsky.social"
+    profile_url: "https://bsky.app/profile/b-pmiller.bsky.social"
+    char_limit: 300
+    voice_modifier: "Warmer. Slightly more personal. Both sub-brands fit naturally here. Conversational."
+    hashtag_policy: "0–1 hashtags. Conversational tone beats hashtag spam."
+    best_for: ["product-spotlight", "creative process", "behind-the-scenes"]
+
+# Post angles. Each defines a template shape. The ollama prompt will pull one
+# of these per draft and fill in product + platform.
+angles:
+  build_in_public:
+    label: "Build-in-public"
+    shape: "What I just shipped / what I'm building now / what's broken"
+    tone: "Honest, slightly tired, real"
+    example: "Finally shipped the Client Onboarding Pack after three rewrites. Six Notion templates, one ugly but functional cover image, $14. Still need to write the welcome email."
+  lessons_learned:
+    label: "Lessons learned"
+    shape: "One specific lesson from building/selling. Concrete, not generic."
+    tone: "Reflective but concrete"
+    example: "Custom landing pages convert better than Gumroad defaults — but only if the cover image is a real product shot, not a stock photo. Took me three products to learn this."
+  product_spotlight:
+    label: "Product spotlight"
+    shape: "Lead with the problem, show the product as the resolution. Don't oversell."
+    tone: "Quietly proud"
+    example: "67% of client conflicts start in week one. Most of them are scope. Built a $14 Notion pack that fixes the intake, agenda, and contract before they become problems."
+  behind_the_scenes:
+    label: "Behind the scenes"
+    shape: "Show a detail of the work. A number, a screenshot description, a decision."
+    tone: "Curious, nerdy"
+    example: "Spent 40 minutes yesterday arguing with myself about whether the buy button should be amber-400 or amber-500. Shipped amber-400. Nobody will notice. I will."
+  customer_story:
+    label: "Customer story / use case"
+    shape: "Hypothetical or real use case. 'Someone using X for Y'."
+    tone: "Observational"
+    example: "Saw a designer use the Freelancer Admin Starter Kit to track 6 retainers in a single Notion page. Took her 20 minutes to set up. Replaced 3 different tools."
+
+# BANNED PHRASES — if any of these appear, the draft is rejected and regenerated
+banned_phrases:
+  ai_tells:
+    - "dive into"
+    - "delve into"
+    - "tapestry"
+    - "elevate"
+    - "leverage"
+    - "unlock the power"
+    - "in today's fast-paced world"
+    - "in this day and age"
+    - "navigate the complexities"
+    - "robust solution"
+    - "seamlessly"
+    - "effortlessly"
+    - "cutting-edge"
+    - "game-changer"
+    - "game changer"
+    - "revolutionize"
+    - "paradigm shift"
+    - "embark on a journey"
+    - "unleash"
+    - "harness the power"
+    - "in conclusion"
+    - "moreover"
+    - "furthermore"
+  hard_sell:
+    - "buy now"
+    - "limited time"
+    - "don't miss out"
+    - "act fast"
+    - "exclusive offer"
+    - "massive discount"
+    - "huge sale"
+  cringe:
+    - "excited to announce"
+    - "thrilled to share"
+    - "humbled"
+    - "blessed"
+    - "stay tuned"
+    - "coming soon"   # allowed in some contexts but reject on launches
+    - "🔥🔥🔥"
+
+# Posting cadence (sustainable plan, not maxing quota)
+cadence:
+  week_1: 3   # launch week — Mon storefront announce, Wed lessons, Fri product spotlight
+  week_2_onwards: 2  # sustainable: Wed + Sat
+  preferred_times_et:
+    x: "09:00"        # morning commute scroll
+    mastodon: "10:00"
+    bluesky: "14:00"  # afternoon check-in
